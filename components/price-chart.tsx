@@ -28,11 +28,19 @@ export function TradingViewChart({ crypto }: TradingViewChartProps) {
     document.head.appendChild(script);
 
     return () => {
-      if (widgetRef.current) {
-        widgetRef.current.remove();
+      if (
+        widgetRef.current &&
+        widgetRef.current.iframe &&
+        widgetRef.current.iframe.parentNode
+      ) {
+        widgetRef.current.iframe.parentNode.removeChild(
+          widgetRef.current.iframe
+        );
         widgetRef.current = null;
       }
-      document.head.removeChild(script);
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
   }, []);
 
