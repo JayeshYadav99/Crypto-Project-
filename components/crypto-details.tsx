@@ -209,7 +209,7 @@ export function CryptoDetails({ coinId }: CryptoDetailsProps) {
               </p>
               <div className="mt-6 flex justify-center">
                 <Image
-                  src="/assets/frame.png"
+                  src="/assets/framebg.png"
                   alt="KoinX Features"
                   width={180}
                   height={180}
