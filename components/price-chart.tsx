@@ -57,6 +57,7 @@ export function TradingViewChart({ crypto }: TradingViewChartProps) {
       widgetRef.current = new window.TradingView.widget({
         autosize: true,
         symbol: `${crypto?.symbol?.toUpperCase()}USD`,
+        withdateranges: true,
         interval: "D",
         timezone: "Etc/UTC",
         theme: "light",
